@@ -27,7 +27,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
-          app_artifact_location: "/bin/staticsites/801de64eb0b68824f5ecc05bfa44618ef4a69adb35954ba01530fc35f852d70b4-be9fa41b-17cb-405a-b47f-55d64c6ea1d1010271093/app"
+         
           api_location: ""
           output_location: ""
 
