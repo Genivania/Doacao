@@ -27,7 +27,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
-          app_artifact_location: "/bin/staticsites/8ce33201-c2d9-4304-a787-62367aacbc00-swa-oryx/app" # Adicione esta linha com o caminho correto
+          app_artifact_location: "/bin/staticsites/367c027f-b157-4f48-a64b-a03c28a411f7-swa-oryx/app"
           api_location: ""
           output_location: ""
 
