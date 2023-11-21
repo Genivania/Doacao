@@ -10,11 +10,20 @@ on:
       - main
 
 jobs:
-        build_and_deploy_job:
-          runs-on: ubuntu-latest
-          name: Build and Deploy Job
-          steps:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
             - uses: actions/checkout@v3
+            - name: Build
+              run: |
+                # Execute os comandos de build específicos do Vite
+                npm install
+                npm run build
+            - name: Copy to Root
+              run: |
+                # Copie o conteúdo de dist para o diretório raiz
+                cp -r dist/* .
             - name: Build And Deploy
               id: builddeploy
               uses: Azure/static-web-apps-deploy@v1
@@ -24,7 +33,7 @@ jobs:
                 action: "upload"
                 app_location: "/"
                 api_location: ""
-                output_location: "dist"  # Altere para o seu diretório de saída do Vite
+                output_location: "/"
       
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
