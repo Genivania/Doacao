@@ -12,6 +12,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist' // Especifique o diretório de saída desejado
+    outDir: 'dist' // Altere para o diretório que desejar
   }
 })
+
