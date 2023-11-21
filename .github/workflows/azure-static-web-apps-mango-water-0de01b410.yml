@@ -27,7 +27,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
-         
+          app_artifact_location: "/bin/staticsites/764572ce-e48f-4bb7-9887-d6fb8a0d2112-swa-oryx/app"
           api_location: ""
           output_location: ""
 
@@ -42,7 +42,3 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_WATER_0DE01B410 }}
           action: "close"
-
-
-
-          
