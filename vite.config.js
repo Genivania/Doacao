@@ -1,21 +1,20 @@
-import { fileURLToPath, URL } from 'node:url'
-import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default {
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   build: {
     outDir: 'dist',
-    chunkSizeWarningLimit: 800, // Ajuste o limite conforme necessário
+    chunkSizeWarningLimit: 800,
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Se desejar, você pode ajustar a lógica para particionar manualmente os chunks
           if (id.includes('node_modules')) {
             return 'vendor';
           }
@@ -23,4 +22,4 @@ export default defineConfig({
       },
     },
   },
-})
+};
